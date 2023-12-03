@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useIntl  } from 'react';
 import { Button } from 'reactstrap';
-import { baseFrontUrl } from '../../shared/baseUrl';
+import { baseFrontUrl } from '../../../shared/baseUrl';
 import { Link } from 'react-router-dom';
 
 const Jambo = () => {

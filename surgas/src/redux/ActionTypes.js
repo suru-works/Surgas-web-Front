@@ -1,0 +1,9 @@
+//System
+export const CHANGE_LANGUAJE = 'CHANGE_LANGUAGE';
+
+
+// Registration
+export const CHECKTEL_RESET = 'CHECKTEL_RESET';
+export const CHECKTEL_REQUEST = 'CHECKTEL_LOADING';
+export const CHECKTEL_SUCCESS = 'CHECKTEL_SUCCESS';
+export const CHECKTEL_FAILED = 'CHECKTEL_FAILED';
