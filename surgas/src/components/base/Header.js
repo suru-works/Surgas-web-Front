@@ -1,13 +1,16 @@
-import '../../styles/styles.css';
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
-import { Navbar, NavbarToggler, NavbarBrand, Collapse, Nav, NavItem, Button } from 'reactstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import store from '../../redux/store';
+import { faHome, faList, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { baseFrontUrl } from '../../shared/baseUrl';
 import { ENGLISH } from '../../languages/languages';
 import { CHANGE_LANGUAJE } from '../../redux/ActionTypes';
+
+import '../../styles/base/Header.css';
 
 const Header = () => {
     const strings = useIntl();
@@ -27,57 +30,31 @@ const Header = () => {
     };
 
     return (
-        <Navbar class="navbar navbar-expand-md" dark expand='md'>
-            <div className='container'>
-
-                <div>
-                    <Button onClick={handleChangeLanguage}>
-                        Cambiar a inglés
-                    </Button>
-                </div>
-
-                <NavbarToggler onClick={toggleNav} />
-                <NavbarBrand className='mr-auto' href='/'>
-                    <img src={baseFrontUrl + "public/logo/S-14-cropped.png"} height='31.5' alt='small-company-logo' />
-                </NavbarBrand>
-                <Collapse isOpen={navIsOpen} navbar>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem className="d-flex align-items-center">
-                            <Link className='nav-link' to='/'>
-                                <span className='fa fa-home fa-lg'>{strings.formatMessage({ id: "home" })}</span>
-                            </Link>
-                        </NavItem>
-                        <NavItem className="d-flex align-items-center">
-                            <Link className='nav-link' to='/products'>
-                                <span className='fa fa-list fa-lg'>Productos</span>
-                            </Link>
-                        </NavItem>
-                        <NavItem className="d-flex align-items-center">
-                            <Link className='nav-link' to='/contact'>
-                                <span className='fa fa-address-card fa-lg'>Contáctanos</span>
-                            </Link>
-                        </NavItem>
-
-                        <NavItem className="d-flex align-items-center">
-                            <p>Hola</p>
-                        </NavItem>
-                        <NavItem className="d-flex align-items-center">
-                            <p>Mundo</p>
-                        </NavItem>
-                    </Nav>
-                    <Nav className="ml-auto" navbar >
-                        <Collapse isOpen={navIsOpen} navbar>
-                            <NavItem className="d-flex align-items-center">
-                                <p>Autentificacion</p>
-                            </NavItem>
-                        </Collapse>
-                    </Nav>
-                </Collapse>
-            </div>
+        <Navbar className='app-bg-primary' expand='md'>
+            <Navbar.Toggle onClick={toggleNav} />
+            <Navbar.Brand className='mr-auto' href='/'>
+                <img src={baseFrontUrl + "public/logo/S-14-cropped.png"} height='31.5' alt='small-company-logo' />
+            </Navbar.Brand>
+            <Nav.Item className="d-flex align-items-center">
+                <Link className='nav-link' to='/'>
+                    <FontAwesomeIcon icon={faHome} /> {strings.formatMessage({ id: "home" })}
+                </Link>
+            </Nav.Item>
+            <Nav.Item className="d-flex align-items-center">
+                <Link className='nav-link' to='/products'>
+                    <FontAwesomeIcon icon={faList} /> {strings.formatMessage({ id: "products" })}
+                </Link>
+            </Nav.Item>
+            <Nav.Item className="d-flex align-items-center">
+                <Link className='nav-link' to='/contactus'>
+                    <FontAwesomeIcon icon={faAddressCard} /> {strings.formatMessage({ id: "contact" })}
+                </Link>
+            </Nav.Item>
+            <Button className="button app-bg-complementary" onClick={handleChangeLanguage}>
+                Cambiar a inglés
+            </Button>
         </Navbar>
     );
 };
-
-Header.propTypes = {};
 
 export default Header;

@@ -1,3 +1,18 @@
 {
-    "home":"home"
+    "home":"Home",
+    "products":"Products",
+    "contact":"Contact us",
+    "ourAddress":"Our address",
+    "address":"112 South Street, Apt. 51-03",
+    "city":"Caldas",
+    "state":"Antioquia",
+    "navigate":"Navigate",
+    "getInTouch":"Get in touch with Us",
+    "colombianTelephoneCode":"57",
+    "medellinTelephoneCode":"604",
+    "phone":"3223947",
+    "mobile":"3122994442",
+    "mail":"surgasdeantioquia@gmail.com",
+    "copyright":"© 2023 Surgas de Antioquia. All rights reserved.",
+    "poweredBy":"powered by Suruworks."
 }
