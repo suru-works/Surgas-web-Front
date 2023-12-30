@@ -1,0 +1,9 @@
+.app-bg-primary .nav-link {
+    color: #fff;
+}
+.app-bg-complementary .button {
+    color: #fff;
+}
+.app-bg-complementary .button:hover {
+    background-color: #f9f089;
+}
