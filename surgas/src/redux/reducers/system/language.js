@@ -1,7 +1,7 @@
 import * as ActionTypes from '../../ActionTypes';
-import { SPANISH } from "../../../languages/languages";
+import languajes from "../../../languages/languages.json";
 
-export function languageReducer(state = { languaje: SPANISH }, action) {
+export function languageReducer(state = { languaje: languajes.spanish }, action) {
     switch (action.type) {
         case ActionTypes.CHANGE_LANGUAJE:
             return {

@@ -17,19 +17,13 @@ const Footer = () => {
                         <h5>{strings.formatMessage({ id: "navigate" })}</h5>
                         <ul className="list-unstyled">
                             <li>
-                                <Link to="/">
-                                    <a style={{ color: 'white' }}>{strings.formatMessage({ id: "home" })}</a>
-                                </Link>
+                                <Link to="/" className='link'>{strings.formatMessage({ id: "home" })}</Link>
                             </li>
                             <li>
-                                <Link to="/products">
-                                    <a style={{ color: 'white' }}>{strings.formatMessage({ id: "products" })}</a>
-                                </Link>
+                                <Link to="/products" className='link'>{strings.formatMessage({ id: "products" })}</Link>
                             </li>
                             <li>
-                                <Link to="/contactus">
-                                    <a style={{ color: 'white' }}>{strings.formatMessage({ id: "contact" })}</a>
-                                </Link>
+                                <Link to="/contactus" className='link'>{strings.formatMessage({ id: "contact" })}</Link>
                             </li>
                         </ul>
                     </div>

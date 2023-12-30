@@ -14,5 +14,12 @@
     "mobile":"3122994442",
     "mail":"surgasdeantioquia@gmail.com",
     "copyright":"© 2023 Surgas de Antioquia. All rights reserved.",
-    "poweredBy":"powered by Suruworks."
+    "poweredBy":"powered by Suruworks.",
+    "locationInfo": "Location information",    
+    "call": "Call",
+    "whatsapp": "Whatsapp",
+    "email": "Email",
+    "map": "Map",
+    "caq": "Commonly Asked Questions",
+    "companyBrand": "surgas de antioquia"
 }
