@@ -1,9 +1,33 @@
 .app-bg-primary .nav-link {
     color: #fff;
 }
+
+.app-bg-primary .Nav-Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .app-bg-complementary .button {
     color: #fff;
 }
+
 .app-bg-complementary .button:hover {
     background-color: #f9f089;
+}
+
+.app-bg-primary .active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 12px;
+    margin-bottom: -12px;
+}
+
+.app-bg-primary .pending {
+    color: #fff;
+}
+
+.app-bg-primary .transitioning {
+    color: #fff;
+    border-bottom: 2px solid #fff;
 }
