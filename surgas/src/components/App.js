@@ -37,7 +37,7 @@ const AppContent = () => {
       </Routes>
       <Outlet />
       <Footer />
-      <ProductsToolsButton/>
+      <ProductsToolsButton />
     </>
   );
 }

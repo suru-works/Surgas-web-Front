@@ -7,10 +7,15 @@ import { useLocation } from 'react-router-dom';
 
 const ProductsToolsButton = () => {
     const location = useLocation();
+
+    const toggleAddProductModal = () => {
+        console.log("PUTO");
+    }
+
     if (location.pathname === '/products') {
         return (
             <Portal container={document.body}>
-                <FloatingButton>
+                <FloatingButton tooltip={"Añadir un producto"} onClick={toggleAddProductModal}>
                     <FontAwesomeIcon icon={faPlus} styles={{ color: '#000000' }} />
                 </FloatingButton>
             </Portal>
