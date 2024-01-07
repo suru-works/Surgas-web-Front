@@ -1,16 +1,13 @@
 import React from 'react';
-import Portal from '../../reusable/Portal';
-import FloatingButton from '../../reusable/FloatingButton';
+import Portal from '../../../reusable/Portal';
+import FloatingButton from '../../../reusable/FloatingButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
+import { toggleAddProductModal } from '../../../../redux/ActionCreators/products/AddProductActions';
 
 const ProductsToolsButton = () => {
     const location = useLocation();
-
-    const toggleAddProductModal = () => {
-        console.log("PUTO");
-    }
 
     if (location.pathname === '/products') {
         return (

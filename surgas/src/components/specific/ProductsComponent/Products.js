@@ -2,6 +2,7 @@ import React from "react";
 import { useIntl } from 'react-intl';
 import SearchCriteria from "./SearchCriteria";
 import SearchResult from "./SearchResult";
+import AddProductModal from "./AddProduct/AddProductModal";
 
 const Products = () => {
     const strings = useIntl();
@@ -17,7 +18,8 @@ const Products = () => {
             </div>
             <hr />
             <div className="row">
-                <SearchResult/>
+                <SearchResult />
+                <AddProductModal/>
             </div>
         </div>
     )

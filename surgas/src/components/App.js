@@ -15,7 +15,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css';
-import ProductsToolsButton from './specific/ProductsComponent/ProductsToolsButton';
+import ProductsToolsButton from './specific/ProductsComponent/AddProduct/ProductsToolsButton';
 
 const getMessages = (locale) => {
   switch (locale) {
