@@ -19,8 +19,8 @@ const Products = () => {
             <hr />
             <div className="row">
                 <SearchResult />
-                <AddProductModal/>
             </div>
+            <AddProductModal />
         </div>
     )
 }

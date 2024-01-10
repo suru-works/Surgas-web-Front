@@ -18,7 +18,6 @@ const RenderProducts = ({ products }) => {
 
 const SearchResult = () => {
     const strings = useIntl();
-    //const products = require('../../../mocks/products.json');
     const products = useSelector(state => state?.productsSearch?.products);
     const loading = useSelector(state => state?.productsSearch?.loading);
     const error = useSelector(state => state?.productsSearch?.error);

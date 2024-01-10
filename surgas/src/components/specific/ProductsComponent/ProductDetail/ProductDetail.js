@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductDetail = ({product}) => {
+const ProductDetail = () => {
     return(
         <label>detalle del producto.</label>
     );
