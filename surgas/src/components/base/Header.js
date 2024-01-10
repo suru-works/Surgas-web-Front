@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useIntl } from 'react-intl';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { faHome, faList, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from "react-redux";
@@ -33,7 +33,7 @@ const Header = () => {
             if (scrollY > lastScrollY) {
                 navbarRef.current?.classList.add('d-none');
             }
-            else if(scrollY < lastScrollY) {
+            else if (scrollY < lastScrollY) {
                 navbarRef.current?.classList.remove('d-none');
             }
             lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -46,14 +46,21 @@ const Header = () => {
                 ticking = true;
             }
         };
-
         if (navbarRef.current == null) {
             navbarRef.current = document.getElementById('app-navbar');
         }
-
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    const navLinkClassNames = ({ isActive, isPending, isTransitioning }) => {
+        return ([
+            isPending ? "d-flex pending" : "d-flex nav-link",
+            isActive ? "d-flex active" : "d-flex nav-link",
+            isTransitioning ? "d-flex transitioning" : "d-flex nav-link",
+        ].join(" ")
+        );
+    }
 
     return (
         <Navbar className='app-bg-primary row expand-lg fixed-top sticky-top' id='app-navbar'>
@@ -65,25 +72,25 @@ const Header = () => {
             </div>
             <div className='col-6'>
                 <div className='d-flex align-items-center flex-grow-1 justify-content-end' id='navigationControlsContainer'>
-                    <Nav.Item className="align-items-center flex-grow-1 ">
-                        <Link className='d-flex nav-link' to='/'>
+                    <Nav.Item className="align-items-center flex-grow-1 Nav-Item">
+                        <NavLink className={navLinkClassNames} to='/'>
                             <FontAwesomeIcon icon={faHome} /><span className='d-none d-md-block ml-4'>{strings.formatMessage({ id: "home" })}</span>
-                        </Link>
+                        </NavLink >
                     </Nav.Item>
-                    <Nav.Item className="align-items-center flex-grow-1 ">
-                        <Link className='d-flex nav-link' to='/products'>
+                    <Nav.Item className="align-items-center flex-grow-1 Nav-Item">
+                        <NavLink className={navLinkClassNames} to='/products'>
                             <FontAwesomeIcon icon={faList} /><span className='d-none d-md-block ml-4'>{strings.formatMessage({ id: "products" })}</span>
-                        </Link>
+                        </NavLink >
                     </Nav.Item>
-                    <Nav.Item className="align-items-center flex-grow-1 ">
-                        <Link className='d-flex nav-link' to='/contactus'>
+                    <Nav.Item className="align-items-center flex-grow-1 Nav-Item">
+                        <NavLink className={navLinkClassNames} to='/contactus'>
                             <FontAwesomeIcon icon={faAddressCard} /><span className='d-none d-md-block ml-4'>{strings.formatMessage({ id: "contact" })}</span>
-                        </Link>
+                        </NavLink >
                     </Nav.Item>
                 </div>
             </div>
             <div className='col-3 expand-lg'>
-                <LanguageDropdown actualValue={locale} action={CHANGE_LANGUAJE} values={Object.entries(languajes)} id='global-languaje-selection'/>
+                <LanguageDropdown actualValue={locale} action={CHANGE_LANGUAJE} values={Object.entries(languajes)} id='global-languaje-selection' />
             </div>
         </Navbar>
     );

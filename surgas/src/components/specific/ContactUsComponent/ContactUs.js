@@ -5,7 +5,7 @@ import { faEnvelope, faMobile, faPhone } from '@fortawesome/free-solid-svg-icons
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Card } from "react-bootstrap";
 import MapComponent from './Map';
-import UncontrolledCollapse from "../../reusable/UncontrolledCollapse";
+import UncontrolledCollapse from "../../reusable/animations/UncontrolledCollapse";
 import CommentForm from "./CommentForm";
 
 const ContactUs = () => {

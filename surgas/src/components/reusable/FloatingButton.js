@@ -1,22 +1,23 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 
-const FloatingButton = ({ children }) => {
+import '../../styles/reusable/FloatingButton.css';
+
+const FloatingButton = ({ children, tooltip, onClick}) => {
     return (
-        <Button
-            style={{
-                position: "fixed",
-                bottom: 0,
-                right: 0,
-                zIndex: 10,
-                margin: "10px 20px 10px 50px",
-                border: "1px solid black",
-                borderRadius: "5px",
-            }}
-            variant="fab"
+        <OverlayTrigger
+            placement="left"
+            delay={{ show: 250, hide: 400 }}
+            overlay={(
+                <Tooltip id="button-tooltip">
+                    {tooltip}
+                </Tooltip>
+            )}
         >
-            {children}
-        </Button>
+            <Button id="floating-button" tooltip={tooltip} onClick={onClick}>
+                {children}
+            </Button>
+        </OverlayTrigger>
     );
 };
 

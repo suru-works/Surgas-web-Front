@@ -18,7 +18,7 @@ const DispatchDropdown = ({ actualValue, action, values }) => {
             type: action,
             payload: key,
         });
-    };
+    }
 
     return (
         <DropdownButton
