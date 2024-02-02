@@ -10,8 +10,6 @@ import languajes from "../languages/languages.json"
 import esTranslations from '../languages/strings.es.json';
 import enTranslations from '../languages/strings.en.json';
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css';

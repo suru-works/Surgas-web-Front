@@ -10,9 +10,9 @@ import FloatingButton from '../../reusable/FloatingButton';
 const Home = () => {
   return (
     <div className='homeBackGround'>
-      <HotProductsCarrousel/>
-      <JumbotronComponent/>
-      <TipsCarrousel/>  
+      <TipsCarrousel />
+      <JumbotronComponent />
+      <HotProductsCarrousel />
     </div>
   );
 };
